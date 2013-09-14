@@ -1,0 +1,1 @@
+D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\BlogSystemClient.exe.config
