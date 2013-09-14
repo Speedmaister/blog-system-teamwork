@@ -18,9 +18,9 @@ namespace BlogSystemClient.Views
     /// <summary>
     /// Interaction logic for LoginRegisterForm.xaml
     /// </summary>
-    public partial class LoginRegisterForm : UserControl
+    public partial class LoginRegisterView : UserControl
     {
-        public LoginRegisterForm()
+        public LoginRegisterView()
         {
             InitializeComponent();
         }
