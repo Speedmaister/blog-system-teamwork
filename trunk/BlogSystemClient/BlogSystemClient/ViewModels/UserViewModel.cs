@@ -9,20 +9,27 @@ using System.Windows.Input;
 
 namespace BlogSystemClient.ViewModels
 {
-    public class UserViewModel:UserModel
+    public class UserViewModel : UserModel
     {
-        private bool loginCommand;
+        private ICommand loginCommand;
         public string SessionKey { get; set; }
 
         public ICommand Login
         {
-            get 
+            get
             {
-                if(this.loginCommand==null)
+                if (this.loginCommand == null)
                 {
-                    this.loginCommand = new RelayCommand();
+                    this.loginCommand = new RelayCommand(this.HandleLoginCommand);
                 }
+
+                return this.loginCommand;
             }
+        }
+
+        private void HandleLoginCommand(object obj)
+        {
+
         }
     }
 }
