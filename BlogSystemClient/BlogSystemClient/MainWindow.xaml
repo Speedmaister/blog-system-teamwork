@@ -1,18 +1,25 @@
-﻿<Window x:Class="BlogSystemClient.MainWindow"
+﻿<Window xmlns:Views="clr-namespace:BlogSystemClient.Views"  x:Class="BlogSystemClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:viewModels="clr-namespace:BlogSystemClient.ViewModels"
+        xmlns:ViewModels="clr-namespace:BlogSystemClient.ViewModels"
         Title="MainWindow" Height="350" Width="525">
     <Window.DataContext>
-        <viewModels:MasterViewModel />
+        <ViewModels:MasterViewModel />
     </Window.DataContext>
     <Window.Resources>
         <DataTemplate            
-            DataType="{x:Type ViewModel:UserViewModel}">
-            <Views:LoginRegisterForm/>
+            DataType="{x:Type ViewModels:LoginRegisterViewModel}">
+            <Views:LoginRegisterView />
         </DataTemplate>
     </Window.Resources>
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <ItemsControl ItemsSource="{Binding ViewModels}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ContentControl Content="{Binding CurrentViewModel}" />
+    </StackPanel>
 </Window>
