@@ -60,10 +60,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="ViewModels\IPageViewModel.cs" />
     <Compile Include="Views\LoginRegisterForm.xaml.cs">
       <DependentUpon>LoginRegisterForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
