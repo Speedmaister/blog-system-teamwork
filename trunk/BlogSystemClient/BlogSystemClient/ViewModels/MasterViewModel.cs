@@ -13,6 +13,7 @@ namespace BlogSystemClient.ViewModels
         private IPageViewModel createSubcommentViewModel;
         private IPageViewModel createCommentViewModel;
         private IPageViewModel currenViewModel;
+        private IPageViewModel articlesViewModel;
 
         public List<IPageViewModel> ViewModels
         {
@@ -25,6 +26,14 @@ namespace BlogSystemClient.ViewModels
             get
             {
                 return loginRegisterViewModel;
+            }
+        }
+
+        public IPageViewModel ArticlesViewModel
+        {
+            get 
+            {
+                return articlesViewModel;
             }
         }
 
@@ -71,12 +80,15 @@ namespace BlogSystemClient.ViewModels
             this.loginRegisterViewModel = new LoginRegisterViewModel();
             this.createArticleViewModel = new CreateArticleViewModel();
             this.createCommentViewModel = new CreateCommentViewModel();
+            this.articlesViewModel = new ArticlesViewModel();
             this.createSubcommentViewModel = new CreateSubcommentViewModel();
             this.ViewModels.Add(this.LoginRegisterViewModel);
             this.ViewModels.Add(this.CreateArticleViewModel);
             this.ViewModels.Add(this.CreateCommentViewModel);
             this.ViewModels.Add(this.CreateSubcommentViewModel);
-            this.CurrentViewModel = this.CreateArticleViewModel;
+            this.ViewModels.Add(this.ArticlesViewModel);
+
+            this.CurrentViewModel = this.ArticlesViewModel;
         }
 
         

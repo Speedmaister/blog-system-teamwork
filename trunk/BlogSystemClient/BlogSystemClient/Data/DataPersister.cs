@@ -63,6 +63,16 @@ namespace BlogSystemClient.Data
             return response;
         }
 
+        public static IEnumerable<Article> GetAll()
+        {
+            return requester.Get<IEnumerable<Article>>("articles/all");
+        }
+
+        public static Article GetArticleById(int articleId)
+        {
+            return requester.Get<Article>("articles/singleArticle/" + articleId);
+        }
+
         public static int CreateSubcomment(int parentId, string author, string content, string sessionKey)
         {
             string subcommentUrl = "subComments/create?sessionKey=" + sessionKey;
