@@ -67,22 +67,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\CommandsBehavior.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Data\DataPersister.cs" />
     <Compile Include="Data\HttpRequester.cs" />
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\SessionKeyModel.cs" />
+    <Compile Include="Models\SubcommentModel.cs" />
+    <Compile Include="Models\VoteModel.cs" />
+    <Compile Include="ViewModels\ArticlesViewModel.cs" />
     <Compile Include="ViewModels\CreateArticleViewModel.cs" />
     <Compile Include="ViewModels\CreateCommentViewModel.cs" />
+    <Compile Include="ViewModels\CreateSubcommentViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\LoginRegisterViewModel.cs" />
     <Compile Include="ViewModels\IPageViewModel.cs" />
+    <Compile Include="ViewModels\SingleArticlePage.cs" />
+    <Compile Include="Views\ArticlesView.xaml.cs">
+      <DependentUpon>ArticlesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateArticleView.xaml.cs">
       <DependentUpon>CreateArticleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CreateCommentView.xaml.cs">
       <DependentUpon>CreateCommentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateSubcommentView.xaml.cs">
+      <DependentUpon>CreateSubcommentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginRegisterView.xaml.cs">
       <DependentUpon>LoginRegisterView.xaml</DependentUpon>
@@ -100,11 +113,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ArticlesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateArticleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateCommentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CreateSubcommentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
