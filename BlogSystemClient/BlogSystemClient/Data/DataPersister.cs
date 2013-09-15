@@ -10,7 +10,7 @@ namespace BlogSystemClient.Data
 {
     public class DataPersister
     {
-        private const string BaseUrl = "http://localhost:49725/api/";
+        private const string BaseUrl = "http://blogsystem-1.apphb.com/api/";
         private static HttpRequester requester = new HttpRequester(BaseUrl);
 
         public static void RegisterUser(string username, string authCode)
