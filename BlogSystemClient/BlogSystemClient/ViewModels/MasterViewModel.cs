@@ -9,7 +9,7 @@ namespace BlogSystemClient.ViewModels
     public class MasterViewModel : ViewModelBase
     {
         private IPageViewModel loginRegisterViewModel;
-        private IPageViewModel createCommentViewModel;
+        public IPageViewModel createArticleViewModel;
         private IPageViewModel currenViewModel;
 
         public List<IPageViewModel> ViewModels
@@ -26,11 +26,11 @@ namespace BlogSystemClient.ViewModels
             }
         }
 
-        public IPageViewModel CreateCommentViewModel
+        public IPageViewModel CreateArticleViewModel
         {
             get
             {
-                return createCommentViewModel;
+                return createArticleViewModel;
             }
         }
 
@@ -51,9 +51,12 @@ namespace BlogSystemClient.ViewModels
         {
             this.ViewModels = new List<IPageViewModel>();
             this.loginRegisterViewModel = new LoginRegisterViewModel();
-            this.createCommentViewModel = new CreateCommentViewModel();
+            this.createArticleViewModel = new CreateArticleViewModel();
             this.ViewModels.Add(this.LoginRegisterViewModel);
-            this.CurrentViewModel = this.LoginRegisterViewModel;
+            this.ViewModels.Add(this.CreateArticleViewModel);
+            this.CurrentViewModel = this.CreateArticleViewModel;
         }
+
+        
     }
 }
