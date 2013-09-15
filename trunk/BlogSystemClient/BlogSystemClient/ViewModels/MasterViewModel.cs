@@ -10,10 +10,8 @@ namespace BlogSystemClient.ViewModels
 {
     public class MasterViewModel : ViewModelBase
     {
-        private NavigationCommands navigator;
-
+        private IPageViewModel currentViewModel;
         public LoginRegisterViewModel LoginRegisterViewModel { get; set; }
-
 
         public ArticlesViewModel ArticlesViewModel { get; set; }
 
@@ -23,7 +21,18 @@ namespace BlogSystemClient.ViewModels
 
         public CreateSubcommentViewModel CreateSubcommentViewModel { get; set; }
 
-        public IPageViewModel CurrentViewModel { get; set; }
+        public IPageViewModel CurrentViewModel
+        {
+            get
+            {
+                return this.currentViewModel;
+            }
+            set
+            {
+                this.currentViewModel = value;
+                OnPropertyChanged("CurrentViewModel");
+            }
+        }
 
         public void NavigateToHome(object sender, EventArgs e)
         {
@@ -39,7 +48,6 @@ namespace BlogSystemClient.ViewModels
             this.ArticlesViewModel = new ArticlesViewModel();
             this.CreateSubcommentViewModel = new CreateSubcommentViewModel();
             this.CurrentViewModel = this.LoginRegisterViewModel;
-            this.navigator = new NavigationCommands(this);
         }
 
     }

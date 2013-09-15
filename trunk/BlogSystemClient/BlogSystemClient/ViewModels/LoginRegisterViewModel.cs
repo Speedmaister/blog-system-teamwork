@@ -75,7 +75,7 @@ namespace BlogSystemClient.ViewModels
             string password = passwordBox.Password;
             string authCode = this.PasswordToSha1(password, Encoding.UTF8);
             var sessionKeyModel = DataPersister.RegisterUser(Username, authCode);
-            if (sessionKeyModel != null)
+            if (sessionKeyModel.SessionKey != null)
             {
                 if (this.LoginRegisterSuccess != null)
                 {
