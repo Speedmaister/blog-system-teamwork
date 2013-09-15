@@ -14,10 +14,10 @@ namespace BlogSystemClient.ViewModels
 {
     public class LoginRegisterViewModel : ViewModelBase, IPageViewModel
     {
-        public string Username { get; set; }
+        public static string Username { get; set; }
         private ICommand loginCommand;
         private ICommand registerCommand;
-        public string SessionKey { get; set; }
+        public static string SessionKey { get; set; }
 
         public string Name
         {
@@ -55,7 +55,7 @@ namespace BlogSystemClient.ViewModels
             var passwordBox = parameter as PasswordBox;
             string password = passwordBox.Password;
             string authCode = this.PasswordToSha1(password, Encoding.UTF8);
-            DataPersister.LoginUser(this.Username, authCode);
+            DataPersister.LoginUser(Username, authCode);
         }
 
         private void HandleRegisterCommand(object parameter)
@@ -63,7 +63,7 @@ namespace BlogSystemClient.ViewModels
             var passwordBox = parameter as PasswordBox;
             string password = passwordBox.Password;
             string authCode = this.PasswordToSha1(password, Encoding.UTF8);
-            DataPersister.RegisterUser(this.Username, authCode);
+            DataPersister.RegisterUser(Username, authCode);
         }
 
         private string PasswordToSha1(string password,Encoding enc)
