@@ -34,5 +34,18 @@ namespace BlogSystemClient.Data
             };
             var response = requester.Post<SessionKeyModel>(loginUrl, user);
         }
+
+        public static void CreateArticle(string author, string title, string content, string image,string authCode)
+        {
+            string loginUrl = "article/create?=" + authCode;
+            ArticleModel article = new ArticleModel
+            {
+                Author = author,
+                Title = title,
+                Content = content,
+                Image = image
+            };
+            var response = requester.Post<ArticleModel>(loginUrl, article);
+        }
     }
 }
