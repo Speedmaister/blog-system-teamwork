@@ -38,9 +38,9 @@ namespace BlogSystemClient.ViewModels
         private void HandleCreateSubcommentCommand(object parameter)
         {
             var content = this.Content;
-            var author = "radoslav92"; //LoginRegisterViewModel.Username;
-            var sessionKey = "41B90fY4fG691aWi7cbsPNbzHOxeOG89p7h2LPaq"; //LoginRegisterViewModel.SessionKey;
-            var parent = 1; //this.ParentCommentId;
+            var author = LoginRegisterViewModel.Username;
+            var sessionKey = LoginRegisterViewModel.SessionKey;
+            var parent = this.ParentCommentId;
 
             this.Id = DataPersister.CreateSubcomment(parent, author, content, sessionKey);
         }
