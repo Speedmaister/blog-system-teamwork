@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\
+E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\
 BlogSystemClient
 none
 false
 DEBUG;TRACE
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\App.xaml
+E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\App.xaml
 6-574571580
 
-30-1360492225
-18-1091052891
+31-1666841787
+18-1971397459
 MainWindow.xaml;Views\ArticlesView.xaml;Views\CreateArticleView.xaml;Views\CreateCommentView.xaml;Views\CreateSubcommentView.xaml;Views\LoginRegisterView.xaml;
 
 False
