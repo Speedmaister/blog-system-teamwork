@@ -81,6 +81,7 @@
     <Compile Include="ViewModels\CreateArticleViewModel.cs" />
     <Compile Include="ViewModels\CreateCommentViewModel.cs" />
     <Compile Include="ViewModels\CreateSubcommentViewModel.cs" />
+    <Compile Include="ViewModels\EditArticleViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\LoginRegisterViewModel.cs" />
     <Compile Include="ViewModels\IPageViewModel.cs" />
