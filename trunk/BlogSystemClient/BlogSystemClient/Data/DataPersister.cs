@@ -63,5 +63,17 @@ namespace BlogSystemClient.Data
             return response;
         }
 
+        public static int CreateSubcomment(int parentId, string author, string content, string sessionKey)
+        {
+            string subcommentUrl = "subComments/create?sessionKey=" + sessionKey;
+            SubcommentModel subcomment = new SubcommentModel
+            {
+                ParentCommentId = parentId,
+                Author = author,
+                Content = content
+            };
+            var response = requester.Post<int>(subcommentUrl, subcomment);
+            return response;
+        }
     }
 }

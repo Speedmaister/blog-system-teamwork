@@ -15,6 +15,14 @@
             DataType="{x:Type ViewModels:CreateArticleViewModel}">
             <Views:CreateArticleView />
         </DataTemplate>
+        <DataTemplate            
+            DataType="{x:Type ViewModels:CreateCommentViewModel}">
+            <Views:CreateCommentView />
+        </DataTemplate>
+        <DataTemplate            
+            DataType="{x:Type ViewModels:CreateSubcommentViewModel}">
+            <Views:CreateSubcommentView />
+        </DataTemplate>
     </Window.Resources>
     <StackPanel>
         <ItemsControl ItemsSource="{Binding ViewModels}">
