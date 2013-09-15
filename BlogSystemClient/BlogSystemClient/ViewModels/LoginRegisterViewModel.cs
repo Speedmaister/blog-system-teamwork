@@ -19,6 +19,8 @@ namespace BlogSystemClient.ViewModels
         private ICommand registerCommand;
         public static string SessionKey { get; set; }
 
+        public event EventHandler LoginRegisterSuccess;
+
         public string Name
         {
             get { return "Login Form"; }
@@ -37,7 +39,7 @@ namespace BlogSystemClient.ViewModels
             }
         }
 
-        public ICommand CreateArticle
+        public ICommand Register
         {
             get
             {
@@ -55,7 +57,16 @@ namespace BlogSystemClient.ViewModels
             var passwordBox = parameter as PasswordBox;
             string password = passwordBox.Password;
             string authCode = this.PasswordToSha1(password, Encoding.UTF8);
-            DataPersister.LoginUser(Username, authCode);
+            var sessionKeyModel = DataPersister.LoginUser(Username, authCode);
+            if (sessionKeyModel.SessionKey != null)
+            {
+                if (this.LoginRegisterSuccess != null)
+                {
+                    SessionKey = sessionKeyModel.SessionKey;
+                    Username = sessionKeyModel.Username;
+                    this.LoginRegisterSuccess(this, null);
+                }
+            }
         }
 
         private void HandleRegisterCommand(object parameter)
@@ -63,10 +74,19 @@ namespace BlogSystemClient.ViewModels
             var passwordBox = parameter as PasswordBox;
             string password = passwordBox.Password;
             string authCode = this.PasswordToSha1(password, Encoding.UTF8);
-            DataPersister.RegisterUser(Username, authCode);
+            var sessionKeyModel = DataPersister.RegisterUser(Username, authCode);
+            if (sessionKeyModel != null)
+            {
+                if (this.LoginRegisterSuccess != null)
+                {
+                    SessionKey = sessionKeyModel.SessionKey;
+                    Username = sessionKeyModel.Username;
+                    this.LoginRegisterSuccess(this, null);
+                }
+            }
         }
 
-        private string PasswordToSha1(string password,Encoding enc)
+        private string PasswordToSha1(string password, Encoding enc)
         {
             byte[] buffer = enc.GetBytes(password);
             SHA1CryptoServiceProvider cryptoTransformSHA1 =

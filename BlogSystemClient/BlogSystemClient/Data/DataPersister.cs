@@ -13,7 +13,7 @@ namespace BlogSystemClient.Data
         private const string BaseUrl = "http://blogsystem-1.apphb.com/api/";
         private static HttpRequester requester = new HttpRequester(BaseUrl);
 
-        public static void RegisterUser(string username, string authCode)
+        public static SessionKeyModel RegisterUser(string username, string authCode)
         {
             string registerUrl = "users/register";
             UserModel user = new UserModel
@@ -22,9 +22,10 @@ namespace BlogSystemClient.Data
                 Password = authCode
             };
             var response = requester.Post<SessionKeyModel>(registerUrl, user);
+            return response;
         }
 
-        public static void LoginUser(string username, string authCode)
+        public static SessionKeyModel LoginUser(string username, string authCode)
         {
             string loginUrl = "users/login";
             UserModel user = new UserModel
@@ -33,6 +34,7 @@ namespace BlogSystemClient.Data
                 Password = authCode
             };
             var response = requester.Post<SessionKeyModel>(loginUrl, user);
+            return response;
         }
 
         public static void CreateArticle(string author, string title, string content, byte[] image,string sessionKey)

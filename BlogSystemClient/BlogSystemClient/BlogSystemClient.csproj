@@ -68,6 +68,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\CommandsBehavior.cs" />
+    <Compile Include="Commands\NavigationCommands.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Data\DataPersister.cs" />
     <Compile Include="Data\HttpRequester.cs" />
