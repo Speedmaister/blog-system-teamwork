@@ -39,6 +39,33 @@ namespace BlogSystemClient.ViewModels
             this.CurrentViewModel = this.ArticlesViewModel;
         }
 
+        public void NavigateToLoginRegister(object sender, EventArgs e)
+        {
+            this.CurrentViewModel = this.LoginRegisterViewModel;
+        }
+
+        public void NavigateToCreateArticle(object sender, EventArgs e)
+        {
+            //TODO Change view to single article
+            this.CurrentViewModel = this.LoginRegisterViewModel;
+        }
+
+        public void NavigateToEditArticle(object sender, EventArgs e)
+        {
+            //TODO Change view to edit article
+            this.CurrentViewModel = this.CreateCommentViewModel;
+        }
+
+        public void NavigateToCreateSubcomment(object sender, EventArgs e)
+        {
+            this.CurrentViewModel = this.CreateSubcommentViewModel;
+        }
+
+        public void NavigateToCreateComment(object sender, EventArgs e)
+        {
+            this.CurrentViewModel = this.CreateCommentViewModel;
+        }
+
         public MasterViewModel()
         {
             this.LoginRegisterViewModel = new LoginRegisterViewModel();
