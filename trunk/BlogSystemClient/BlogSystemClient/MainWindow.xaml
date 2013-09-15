@@ -12,8 +12,8 @@
             <Views:LoginRegisterView />
         </DataTemplate>
         <DataTemplate            
-            DataType="{x:Type ViewModels:CreateCommentViewModel}">
-            <Views:CreateCommentView />
+            DataType="{x:Type ViewModels:CreateArticleViewModel}">
+            <Views:CreateArticleView />
         </DataTemplate>
     </Window.Resources>
     <StackPanel>
