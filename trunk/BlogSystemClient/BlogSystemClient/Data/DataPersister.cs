@@ -35,9 +35,9 @@ namespace BlogSystemClient.Data
             var response = requester.Post<SessionKeyModel>(loginUrl, user);
         }
 
-        public static void CreateArticle(string author, string title, string content, string image,string authCode)
+        public static void CreateArticle(string author, string title, string content, byte[] image,string sessionKey)
         {
-            string loginUrl = "article/create?=" + authCode;
+            string loginUrl = "article/create?sessionKey=" + sessionKey;
             ArticleModel article = new ArticleModel
             {
                 Author = author,
@@ -45,7 +45,7 @@ namespace BlogSystemClient.Data
                 Content = content,
                 Image = image
             };
-            var response = requester.Post<ArticleModel>(loginUrl, article);
+            var response = requester.Post<string>(loginUrl, article);
         }
 
 
