@@ -37,13 +37,13 @@ namespace BlogSystemClient.Data
 
         public static void CreateArticle(string author, string title, string content, byte[] image,string sessionKey)
         {
-            string loginUrl = "article/create?sessionKey=" + sessionKey;
+            string loginUrl = "Articles/create/" + sessionKey;
             ArticleModel article = new ArticleModel
             {
                 Author = author,
                 Title = title,
                 Content = content,
-                Image = image
+                ArticleImage = image
             };
             var response = requester.Post<string>(loginUrl, article);
         }

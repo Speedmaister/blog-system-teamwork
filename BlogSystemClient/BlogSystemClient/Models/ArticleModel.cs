@@ -11,7 +11,7 @@ namespace BlogSystemClient.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public byte[] Image{get;set;}
+        public byte[] ArticleImage{get;set;}
         public DateTime Date { get; set; }
         public string Author { get; set; }
     }
