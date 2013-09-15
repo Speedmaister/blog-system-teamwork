@@ -47,5 +47,21 @@ namespace BlogSystemClient.Data
             };
             var response = requester.Post<ArticleModel>(loginUrl, article);
         }
+
+
+        public static int CreateComment(int articleId, string author, string content, string sessionKey)
+        {
+            string commentUrl = "comments/Add?sessionKey=" + sessionKey;
+            CommentModel comment = new CommentModel
+            {
+                ArticleId = articleId,
+                Author = author,
+                Content = content,
+                Date = DateTime.Now
+            };
+            var response = requester.Post<int>(commentUrl, comment);
+            return response;
+        }
+
     }
 }
