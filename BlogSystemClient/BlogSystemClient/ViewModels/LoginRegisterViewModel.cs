@@ -37,7 +37,7 @@ namespace BlogSystemClient.ViewModels
             }
         }
 
-        public ICommand Register
+        public ICommand CreateArticle
         {
             get
             {

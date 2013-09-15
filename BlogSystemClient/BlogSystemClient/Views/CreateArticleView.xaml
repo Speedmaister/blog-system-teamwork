@@ -6,6 +6,36 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" 
+               Content="Title" Target="Title"></Label>
+        <TextBox Grid.Row="0" Grid.Column="1" 
+                 Name="Title"
+                 Text="{Binding Title}"></TextBox>
+
+        <Label Grid.Row="1" Grid.Column="0" 
+               Content="Content" Target="Content"></Label>
+        <TextBox Grid.Row="1" Grid.Column="1" 
+                 Name="Content"
+                 Text="{Binding Content}"></TextBox>
+
+        <Label Grid.Row="2" Grid.Column="0" 
+               Content="Image" Target="Image"></Label>
+        <Button Grid.Row="2" Grid.Column="1"
+                 Name="Image"
+                 Command="{Binding GetImage}">Pick Image</Button>
+
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                Command="{Binding CreateArticle}">
+            Create Article</Button>
     </Grid>
 </UserControl>

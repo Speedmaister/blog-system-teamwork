@@ -19,3 +19,5 @@ D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemCli
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csproj.GenerateResource.Cache
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.exe
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.pdb
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.baml
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.g.cs
