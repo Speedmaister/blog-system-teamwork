@@ -11,6 +11,10 @@
             DataType="{x:Type ViewModels:LoginRegisterViewModel}">
             <Views:LoginRegisterView />
         </DataTemplate>
+        <DataTemplate            
+            DataType="{x:Type ViewModels:CreateCommentViewModel}">
+            <Views:CreateCommentView />
+        </DataTemplate>
     </Window.Resources>
     <StackPanel>
         <ItemsControl ItemsSource="{Binding ViewModels}">

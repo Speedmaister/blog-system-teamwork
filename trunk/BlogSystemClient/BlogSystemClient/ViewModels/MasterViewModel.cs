@@ -9,6 +9,7 @@ namespace BlogSystemClient.ViewModels
     public class MasterViewModel : ViewModelBase
     {
         private IPageViewModel loginRegisterViewModel;
+        private IPageViewModel createCommentViewModel;
         private IPageViewModel currenViewModel;
 
         public List<IPageViewModel> ViewModels
@@ -22,6 +23,14 @@ namespace BlogSystemClient.ViewModels
             get
             {
                 return loginRegisterViewModel;
+            }
+        }
+
+        public IPageViewModel CreateCommentViewModel
+        {
+            get
+            {
+                return createCommentViewModel;
             }
         }
 
@@ -42,6 +51,7 @@ namespace BlogSystemClient.ViewModels
         {
             this.ViewModels = new List<IPageViewModel>();
             this.loginRegisterViewModel = new LoginRegisterViewModel();
+            this.createCommentViewModel = new CreateCommentViewModel();
             this.ViewModels.Add(this.LoginRegisterViewModel);
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }
