@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BlogSystemClient.Commands;
+using BlogSystemClient.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,89 +10,37 @@ namespace BlogSystemClient.ViewModels
 {
     public class MasterViewModel : ViewModelBase
     {
-        private IPageViewModel loginRegisterViewModel;
-        public IPageViewModel createArticleViewModel;
-        private IPageViewModel createSubcommentViewModel;
-        private IPageViewModel createCommentViewModel;
-        private IPageViewModel currenViewModel;
-        private IPageViewModel articlesViewModel;
+        private NavigationCommands navigator;
 
-        public List<IPageViewModel> ViewModels
-        {
-            get;
-            set;
-        }
+        public LoginRegisterViewModel LoginRegisterViewModel { get; set; }
 
-        public IPageViewModel LoginRegisterViewModel
-        {
-            get
-            {
-                return loginRegisterViewModel;
-            }
-        }
 
-        public IPageViewModel ArticlesViewModel
-        {
-            get 
-            {
-                return articlesViewModel;
-            }
-        }
+        public ArticlesViewModel ArticlesViewModel { get; set; }
 
-        public IPageViewModel CreateArticleViewModel
-        {
-            get
-            {
-                return createArticleViewModel;
-            }
-        }
+        public CreateArticleViewModel CreateArticleViewModel { get; set; }
 
-        public IPageViewModel CreateCommentViewModel
-        {
-            get
-            {
-                return createCommentViewModel;
-            }
-        }
+        public CreateCommentViewModel CreateCommentViewModel { get; set; }
 
-        public IPageViewModel CreateSubcommentViewModel
-        {
-            get
-            {
-                return createSubcommentViewModel;
-            }
-        }
+        public CreateSubcommentViewModel CreateSubcommentViewModel { get; set; }
 
-        public IPageViewModel CurrentViewModel
+        public IPageViewModel CurrentViewModel { get; set; }
+
+        public void NavigateToHome(object sender, EventArgs e)
         {
-            get
-            {
-                return this.currenViewModel;
-            }
-            set
-            {
-                this.currenViewModel = value;
-                OnPropertyChanged("CurrentViewModel");
-            }
+            this.CurrentViewModel = this.ArticlesViewModel;
         }
 
         public MasterViewModel()
         {
-            this.ViewModels = new List<IPageViewModel>();
-            this.loginRegisterViewModel = new LoginRegisterViewModel();
-            this.createArticleViewModel = new CreateArticleViewModel();
-            this.createCommentViewModel = new CreateCommentViewModel();
-            this.articlesViewModel = new ArticlesViewModel();
-            this.createSubcommentViewModel = new CreateSubcommentViewModel();
-            this.ViewModels.Add(this.LoginRegisterViewModel);
-            this.ViewModels.Add(this.CreateArticleViewModel);
-            this.ViewModels.Add(this.CreateCommentViewModel);
-            this.ViewModels.Add(this.CreateSubcommentViewModel);
-            this.ViewModels.Add(this.ArticlesViewModel);
-
-            this.CurrentViewModel = this.ArticlesViewModel;
+            this.LoginRegisterViewModel = new LoginRegisterViewModel();
+            this.LoginRegisterViewModel.LoginRegisterSuccess += this.NavigateToHome;
+            this.CreateArticleViewModel = new CreateArticleViewModel();
+            this.CreateCommentViewModel = new CreateCommentViewModel();
+            this.ArticlesViewModel = new ArticlesViewModel();
+            this.CreateSubcommentViewModel = new CreateSubcommentViewModel();
+            this.CurrentViewModel = this.LoginRegisterViewModel;
+            this.navigator = new NavigationCommands(this);
         }
 
-        
     }
 }

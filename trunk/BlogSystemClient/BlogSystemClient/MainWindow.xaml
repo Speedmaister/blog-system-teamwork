@@ -29,13 +29,6 @@
         </DataTemplate>
     </Window.Resources>
     <StackPanel>
-        <ItemsControl ItemsSource="{Binding ViewModels}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Name}" />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
         <ContentControl Content="{Binding CurrentViewModel}" />
     </StackPanel>
 </Window>
