@@ -40,7 +40,8 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -70,13 +71,18 @@
     <Compile Include="Data\DataPersister.cs" />
     <Compile Include="Data\HttpRequester.cs" />
     <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\SessionKeyModel.cs" />
     <Compile Include="ViewModels\CreateArticleViewModel.cs" />
+    <Compile Include="ViewModels\CreateCommentViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\LoginRegisterViewModel.cs" />
     <Compile Include="ViewModels\IPageViewModel.cs" />
     <Compile Include="Views\CreateArticleView.xaml.cs">
       <DependentUpon>CreateArticleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateCommentView.xaml.cs">
+      <DependentUpon>CreateCommentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginRegisterView.xaml.cs">
       <DependentUpon>LoginRegisterView.xaml</DependentUpon>
@@ -97,6 +103,10 @@
     <Page Include="Views\CreateArticleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateCommentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\LoginRegisterView.xaml">
       <SubType>Designer</SubType>

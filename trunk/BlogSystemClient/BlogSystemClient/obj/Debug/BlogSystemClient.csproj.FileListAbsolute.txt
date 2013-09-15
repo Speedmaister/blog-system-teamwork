@@ -21,3 +21,5 @@ D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemCli
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.pdb
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.baml
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.baml

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\App.xaml
-3419451484
+4126429519
 
-18-750920808
+21-626636688
 181909800822
-MainWindow.xaml;Views\CreateArticleView.xaml;Views\LoginRegisterView.xaml;
+MainWindow.xaml;Views\CreateArticleView.xaml;Views\CreateCommentView.xaml;Views\LoginRegisterView.xaml;
 
 False
 
