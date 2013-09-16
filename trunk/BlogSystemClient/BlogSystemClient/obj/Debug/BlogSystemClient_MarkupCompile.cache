@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\App.xaml
-6-574571580
+71795213247
 
-31-1666841787
+34-1257582827
 18-1971397459
-MainWindow.xaml;Views\ArticlesView.xaml;Views\CreateArticleView.xaml;Views\CreateCommentView.xaml;Views\CreateSubcommentView.xaml;Views\LoginRegisterView.xaml;
+MainWindow.xaml;Views\ArticlesView.xaml;Views\CreateArticleView.xaml;Views\CreateCommentView.xaml;Views\CreateSubcommentView.xaml;Views\LoginRegisterView.xaml;Views\SingleArticleView.xaml;
 
 False
 

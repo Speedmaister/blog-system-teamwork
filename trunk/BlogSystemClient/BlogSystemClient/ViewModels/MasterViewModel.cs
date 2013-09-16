@@ -1,4 +1,5 @@
 ﻿using BlogSystemClient.Commands;
+using BlogSystemClient.Helpers;
 using BlogSystemClient.Models;
 using System;
 using System.Collections.Generic;
@@ -44,9 +45,14 @@ namespace BlogSystemClient.ViewModels
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }
 
+        public void NavigateToSingleArticle(object sender, SingleArticleEventArgs e)
+        {
+            this.CurrentViewModel = new SingleArticleViewModel(e.choosenArticle);
+        }
+
         public void NavigateToCreateArticle(object sender, EventArgs e)
         {
-            //TODO Change view to single article
+            //TODO Change view to create article
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }
 
@@ -73,6 +79,7 @@ namespace BlogSystemClient.ViewModels
             this.CreateArticleViewModel = new CreateArticleViewModel();
             this.CreateCommentViewModel = new CreateCommentViewModel();
             this.ArticlesViewModel = new ArticlesViewModel();
+            this.ArticlesViewModel.homePageSuccess += this.NavigateToSingleArticle;
             this.CreateSubcommentViewModel = new CreateSubcommentViewModel();
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }

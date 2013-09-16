@@ -67,7 +67,8 @@ namespace BlogSystemClient.Data
 
         public static IEnumerable<Article> GetAll()
         {
-            return requester.Get<IEnumerable<Article>>("articles/all");
+            var response = requester.Get<IEnumerable<Article>>("articles/all");
+            return response;
         }
 
         public static Article GetArticleById(int articleId)
