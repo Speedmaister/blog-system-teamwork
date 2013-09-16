@@ -18,6 +18,6 @@ namespace BlogSystemClient.Models
 
         public int ArticleId { get; set; }
 
-        public IEnumerable<SubcommentModel> SubComments { get; set; }
+        public ICollection<SubcommentModel> SubComments { get; set; }
     }
 }

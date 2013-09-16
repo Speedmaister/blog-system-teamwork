@@ -144,13 +144,7 @@ namespace BlogSystemClient.ViewModels
         private void HandleAddSubComment(object parameter)
         {
             var comment=parameter as CommentModel;
-            //this.OpenAddSubComment(this, comment);
-
-            //CreateSubcommentViewModel addSubcomment = new CreateSubcommentViewModel();
-            //Window windows = new Window();
-            //windows.DataContext = addSubcomment;
-            //windows.ShowDialog();
-
+            this.OpenAddSubComment(this, comment);
         }
 
         private ICommand votePositiveCommand;

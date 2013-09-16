@@ -57,6 +57,11 @@ namespace BlogSystemClient.ViewModels
             this.SingleArticleViewModel.SetArticle(e.choosenArticle);
         }
 
+        public void NavigateToCurrentArticle(object sender, EventArgs e)
+        {
+            this.CurrentViewModel = this.SingleArticleViewModel;
+        }
+
         public void NavigateToCreateArticle(object sender, EventArgs e)
         {
             this.CurrentViewModel = this.CreateArticleViewModel;
@@ -107,6 +112,7 @@ namespace BlogSystemClient.ViewModels
             this.EditArticleViewModel = new EditArticleViewModel();
             this.EditArticleViewModel.OpenAllArticles += this.NavigateToHome;
             this.CreateSubcommentViewModel = new CreateSubcommentViewModel();
+            this.CreateSubcommentViewModel.BackToArticle += this.NavigateToCurrentArticle;
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }
 

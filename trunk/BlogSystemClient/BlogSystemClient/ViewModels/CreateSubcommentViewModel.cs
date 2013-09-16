@@ -23,6 +23,8 @@ namespace BlogSystemClient.ViewModels
 
         public CommentModel Comment { get; set; }
 
+        public event EventHandler BackToArticle;
+
         private ICommand createSubcommentCommand;
 
         public ICommand CreateSubcomment
@@ -54,6 +56,15 @@ namespace BlogSystemClient.ViewModels
             try
             {
                 this.Id = DataPersister.CreateSubcomment(parent, author, content, sessionKey);
+                if (this.BackToArticle != null)
+                {
+                    this.BackToArticle(this, null);
+                }
+                this.Comment.SubComments.Add(new SubcommentModel()
+                {
+                    Content=content,
+                    Author=author
+                });
             }
             catch (Exception ex)
             {
