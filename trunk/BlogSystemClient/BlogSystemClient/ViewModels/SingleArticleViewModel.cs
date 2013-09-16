@@ -153,6 +153,69 @@ namespace BlogSystemClient.ViewModels
 
         }
 
+        private ICommand votePositiveCommand;
+        private ICommand voteNegativeCommand;
+
+        public ICommand VotePositiveCommand
+        {
+            get
+            {
+                if (this.votePositiveCommand == null)
+                {
+                    this.votePositiveCommand = new RelayCommand(this.HandlePositiveVoteCommand);
+                }
+
+                return this.votePositiveCommand;
+            }
+        }
+
+        public ICommand VoteNegativeCommand
+        {
+            get
+            {
+                if (this.voteNegativeCommand == null)
+                {
+                    this.voteNegativeCommand = new RelayCommand(this.HandleNegativeVoteCommand);
+                }
+
+                return this.voteNegativeCommand;
+            }
+        }
+
+        private void HandlePositiveVoteCommand(object parameter)
+        {
+            var articleId = this.Article.Id;
+            var author = LoginRegisterViewModel.Username;
+            var sessionKey = LoginRegisterViewModel.SessionKey;
+
+            try
+            {
+                var response = DataPersister.VoteArticle(articleId, author, true, sessionKey);
+                //this.Id = DataPersister.CreateComment(article, author, content, sessionKey);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void HandleNegativeVoteCommand(object parameter)
+        {
+            var articleId = this.Article.Id;
+            var author = LoginRegisterViewModel.Username;
+            var sessionKey = LoginRegisterViewModel.SessionKey;
+
+            try
+            {
+                var response = DataPersister.VoteArticle(articleId, author, false, sessionKey);
+                //this.Id = DataPersister.CreateComment(article, author, content, sessionKey);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public string Name
         {
             get;
