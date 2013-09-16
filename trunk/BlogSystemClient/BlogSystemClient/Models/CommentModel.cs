@@ -17,5 +17,7 @@ namespace BlogSystemClient.Models
         public DateTime Date { get; set; }
 
         public int ArticleId { get; set; }
+
+        public IEnumerable<SubcommentModel> SubComments { get; set; }
     }
 }

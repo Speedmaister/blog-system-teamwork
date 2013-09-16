@@ -5,6 +5,7 @@ using BlogSystemClient.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,11 @@ namespace BlogSystemClient.ViewModels
                 this.Articles.Add(article);
             }
             this.Click = new RelayCommand(this.HandleClick);
+            string[] filePaths = Directory.GetFiles(@"..\..\Images\");
+            for (int i = 0; i < filePaths.Count(); i++)
+            {
+                File.Delete(filePaths[i]);
+            }
         }
 
         private void HandleClick(object obj)

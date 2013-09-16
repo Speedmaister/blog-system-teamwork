@@ -3,6 +3,7 @@ using BlogSystemClient.Helpers;
 using BlogSystemClient.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,7 @@ namespace BlogSystemClient.ViewModels
         public void NavigateToHome(object sender, EventArgs e)
         {
             this.CurrentViewModel = this.ArticlesViewModel;
+            
         }
 
         public void NavigateToLoginRegister(object sender, EventArgs e)
@@ -67,16 +69,17 @@ namespace BlogSystemClient.ViewModels
             this.EditArticleViewModel.SetChoosenArticle(e.choosenArticle);
         }
 
-        public void NavigateToCreateSubcomment(object sender, EventArgs e)
+        public void NavigateToCreateSubcomment(object sender, CommentModel comment)
         {
             this.CurrentViewModel = this.CreateSubcommentViewModel;
+            this.CreateSubcommentViewModel.SetComment(comment);
         }
 
-        public void NavigateToCreateComment(object sender, EventArgs e)
+        public void NavigateToCreateComment(object sender, SingleArticleEventArgs article)
         {
             this.CurrentViewModel = this.CreateCommentViewModel;
+            this.CreateCommentViewModel.SetArticle(article.choosenArticle);
         }
-
 
         public MasterViewModel()
         {
@@ -87,13 +90,22 @@ namespace BlogSystemClient.ViewModels
             this.CreateArticleViewModel.CreateArticleSuccess += this.NavigateToHome;
 
             this.CreateCommentViewModel = new CreateCommentViewModel();
-            this.ArticlesViewModel = new ArticlesViewModel();
-            this.ArticlesViewModel.openSingleArticle += this.NavigateToSingleArticle;
-            this.ArticlesViewModel.OpenCreateArticle += this.NavigateToCreateArticle;
-            this.SingleArticleViewModel = new SingleArticleViewModel();
-            this.SingleArticleViewModel.OpenEditArticle += this.NavigateToEditArticle;
+            this.CreateCommentViewModel.BackToSingleArticle += NavigateToSingleArticle;
+            if (this.ArticlesViewModel == null)
+            {
+                this.ArticlesViewModel = new ArticlesViewModel();
+                this.ArticlesViewModel.openSingleArticle += this.NavigateToSingleArticle;
+            }
+            if (this.SingleArticleViewModel == null)
+            {
+                this.SingleArticleViewModel = new SingleArticleViewModel();
+                this.SingleArticleViewModel.OpenEditArticle += this.NavigateToEditArticle;
+                this.SingleArticleViewModel.OpenAllArticles += this.NavigateToHome;
+                this.SingleArticleViewModel.OpenAddComment += this.NavigateToCreateComment;
+                this.SingleArticleViewModel.OpenAddSubComment += this.NavigateToCreateSubcomment;
+            }
             this.EditArticleViewModel = new EditArticleViewModel();
-            this.EditArticleViewModel.EditArticleSuccess += this.NavigateToSingleArticle;
+            this.EditArticleViewModel.OpenAllArticles += this.NavigateToHome;
             this.CreateSubcommentViewModel = new CreateSubcommentViewModel();
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }
