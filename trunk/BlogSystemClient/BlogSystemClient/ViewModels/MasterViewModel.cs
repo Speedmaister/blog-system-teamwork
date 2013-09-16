@@ -7,12 +7,32 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BlogSystemClient.ViewModels
 {
     public class MasterViewModel : ViewModelBase
     {
         private IPageViewModel currentViewModel;
+        private ICommand logoutCommand;
+        public ICommand Logout
+        {
+            get
+            {
+                if (this.logoutCommand == null)
+                {
+                    this.logoutCommand = new RelayCommand(this.HandleLogoutCommand);
+                }
+
+                return this.logoutCommand;
+            }
+        }
+
+        private void HandleLogoutCommand(object obj)
+        {
+            this.NavigateToLoginRegister(this, null);
+        }
+
         public LoginRegisterViewModel LoginRegisterViewModel { get; set; }
 
         public ArticlesViewModel ArticlesViewModel { get; set; }

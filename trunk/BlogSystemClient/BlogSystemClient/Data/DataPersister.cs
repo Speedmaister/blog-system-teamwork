@@ -47,6 +47,7 @@ namespace BlogSystemClient.Data
                 Content = content,
                 ArticleImage = image
             };
+            var response = requester.Post<string>(loginUrl, article);
         }
 
 
