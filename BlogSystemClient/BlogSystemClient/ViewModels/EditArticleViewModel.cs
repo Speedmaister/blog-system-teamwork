@@ -70,6 +70,8 @@ namespace BlogSystemClient.ViewModels
 
         }
 
+        public event EventHandler OpenAllArticles;
+
         private void HandleEditArticleCommand(object obj)
         {
             var author = LoginRegisterViewModel.Username;
@@ -93,6 +95,8 @@ namespace BlogSystemClient.ViewModels
             {
                 MessageBox.Show(ex.Message);
             }
+
+            this.OpenAllArticles(this, null);
         }
 
         private void HandleGetImageCommand(object obj)

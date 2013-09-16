@@ -21,6 +21,8 @@ namespace BlogSystemClient.ViewModels
 
         public int ParentCommentId { get; set; }
 
+        public CommentModel Comment { get; set; }
+
         private ICommand createSubcommentCommand;
 
         public ICommand CreateSubcomment
@@ -34,6 +36,12 @@ namespace BlogSystemClient.ViewModels
 
                 return this.createSubcommentCommand;
             }
+        }
+
+        public void SetComment(CommentModel comment)
+        {
+            this.Comment = comment;
+            this.ParentCommentId = comment.Id;
         }
 
         private void HandleCreateSubcommentCommand(object parameter)

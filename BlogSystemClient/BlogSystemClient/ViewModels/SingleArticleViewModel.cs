@@ -2,6 +2,7 @@
 using BlogSystemClient.Data;
 using BlogSystemClient.Helpers;
 using BlogSystemClient.Models;
+using BlogSystemClient.Views;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -26,7 +27,7 @@ namespace BlogSystemClient.ViewModels
 
         public SingleArticleViewModel()
         {
-
+            
         }
 
         public void SetArticle(Article article)
@@ -42,10 +43,17 @@ namespace BlogSystemClient.ViewModels
             MemoryStream stream = new MemoryStream(this.Article.Images[0].Image);
             var image = Image.FromStream(stream);
             image.Save(savePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+            currentImageNumber++;
             this.Article.ImageSource = url;
         }
 
         public event EventHandler<SingleArticleEventArgs> OpenEditArticle;
+
+        public event EventHandler OpenAllArticles;
+
+        public event EventHandler<SingleArticleEventArgs> OpenAddComment;
+
+        public event EventHandler<CommentModel> OpenAddSubComment;
 
         private ICommand editCommand;
 
@@ -68,6 +76,81 @@ namespace BlogSystemClient.ViewModels
             {
                 choosenArticle = this.Article
             });
+        }
+
+        private ICommand backToArticles;
+
+        public ICommand BackToArticles
+        {
+            get
+            {
+                if (this.backToArticles == null)
+                {
+                    this.backToArticles = new RelayCommand(this.HandleBackToArticles);
+                }
+
+                return this.backToArticles;
+            }
+        }
+
+        private void HandleBackToArticles(object parameter)
+        {
+           
+            this.OpenAllArticles(this, null);
+            this.Article.ImageSource = "";
+               
+        }
+
+        private ICommand addComment;
+
+        public ICommand AddComment
+        {
+            get
+            {
+                if (this.addComment == null)
+                {
+                    this.addComment = new RelayCommand(this.HandleAddComment);
+                }
+
+                return this.addComment;
+            }
+        }
+
+        private void HandleAddComment(object parameter)
+        {
+
+            this.OpenAddComment(this, new SingleArticleEventArgs() 
+            {
+                choosenArticle=this.Article
+            });
+
+        }
+
+        private ICommand addSubComment;
+
+        public ICommand AddSubComment
+        {
+            get
+            {
+                if (this.addSubComment == null)
+                {
+                    this.addSubComment = new RelayCommand(this.HandleAddSubComment);
+                }
+
+                return this.addSubComment;
+            }
+        }
+
+        private void HandleAddSubComment(object parameter)
+        {
+            var comment=parameter as CommentModel;
+            //this.OpenAddSubComment(this, comment);
+
+            //CreateSubcommentViewModel addSubcomment = new CreateSubcommentViewModel();
+            //Window windows = new Window();
+            //windows.DataContext = addSubcomment;
+            //windows.ShowDialog();
+
         }
 
         public string Name

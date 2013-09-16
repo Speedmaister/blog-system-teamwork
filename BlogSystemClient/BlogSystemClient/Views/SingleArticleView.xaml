@@ -20,26 +20,31 @@
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Content}" />
-                            <TextBlock Text="{Binding Author}"/>
-
+                            <TextBlock Text="   by   " Foreground="#b8b8b8"></TextBlock>
+                            <TextBlock Text="{Binding Author}" Foreground="#b8b8b8"/>
                             <StackPanel>
-                                <TextBlock Text="Subcomments"/>
+                                <TextBlock Text=" &#x0a; Subcomments"/>
                                 <ListBox ItemsSource="{Binding SubComments}">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="{Binding Content}" />
-                                                <TextBlock Text="{Binding Author}"/>
+                                                <TextBlock Text="   by   " Foreground="#b8b8b8"></TextBlock>
+                                                <TextBlock Text="{Binding Author}" Foreground="#b8b8b8"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                             </StackPanel>
+                            <Button Command="{Binding AddSubComment, Path=DataContext.SingleArticleViewModel.AddSubComment,
+                            RelativeSource={RelativeSource AncestorType={x:Type Window}}}" CommandParameter="{Binding}">Add Sub Comment</Button>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
+        <Button Command="{Binding AddComment}">Add Comment</Button>
         <Button  Command="{Binding EditArticle}">Edit</Button>
+        <Button  Command="{Binding BackToArticles}">Back</Button>
     </StackPanel>
 </UserControl>

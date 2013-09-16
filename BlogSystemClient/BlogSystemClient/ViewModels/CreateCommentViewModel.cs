@@ -1,5 +1,6 @@
 ﻿using BlogSystemClient.Commands;
 using BlogSystemClient.Data;
+using BlogSystemClient.Helpers;
 using BlogSystemClient.Models;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,16 @@ namespace BlogSystemClient.ViewModels
             }
         }
 
+        Article Article { get; set; }
+
+        public void SetArticle(Article article)
+        {
+            this.Article = article;
+            this.ArticleId = article.Id;
+        }
+
+        public event EventHandler<SingleArticleEventArgs> BackToSingleArticle;
+
         private void HandleCreateCommentCommand(object parameter)
         {
             var content = this.Content;
@@ -51,6 +62,17 @@ namespace BlogSystemClient.ViewModels
             {
                 MessageBox.Show(ex.Message);
             }
+
+            this.Article.Comments.Add(new CommentModel()
+            {
+                ArticleId = this.Article.Id,
+                Author = author,
+                Content = content
+            });
+
+            this.BackToSingleArticle(this, new SingleArticleEventArgs() { 
+                choosenArticle=this.Article
+            });
         }
 
         public string Name
