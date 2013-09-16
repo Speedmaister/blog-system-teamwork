@@ -25,9 +25,9 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Title}" Grid.Row="0" Grid.Column="0" />
-                                <TextBlock Text="wrote by" Grid.Row="0" Grid.Column="1" Foreground="#b8b8b8"/>
-                                <TextBlock Text="{Binding Author}" Grid.Row="0" Grid.Column="2" Foreground="#b8b8b8"/>
+                                <TextBlock Text="{Binding Title}" Grid.Row="0" Grid.Column="0" Width="160"/>
+                                <TextBlock Text="wrote by" Grid.Row="0" Grid.Column="1" Foreground="#b8b8b8" Width="60"/>
+                                <TextBlock Text="{Binding Author}" Grid.Row="0" Grid.Column="2" Foreground="#b8b8b8" Width="80"/>
                             </Grid>
                         </Button>
                     </StackPanel>
