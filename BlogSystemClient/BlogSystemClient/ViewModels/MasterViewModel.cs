@@ -63,6 +63,7 @@ namespace BlogSystemClient.ViewModels
         public void NavigateToHome(object sender, EventArgs e)
         {
             this.CurrentViewModel = this.ArticlesViewModel;
+            this.ArticlesViewModel.UpdateArticles();
             
         }
 
