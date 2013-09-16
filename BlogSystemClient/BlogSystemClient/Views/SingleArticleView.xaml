@@ -43,6 +43,8 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
+        <Button  Command="{Binding VotePositiveCommand}">Vote Positive</Button>
+        <Button  Command="{Binding VoteNegativeCommand}">Vote Negative</Button>
         <Button Command="{Binding AddComment}">Add Comment</Button>
         <Button  Command="{Binding EditArticle}">Edit</Button>
         <Button  Command="{Binding BackToArticles}">Back</Button>

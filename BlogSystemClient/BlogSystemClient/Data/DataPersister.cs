@@ -102,5 +102,18 @@ namespace BlogSystemClient.Data
             var response = requester.Post<string>(loginUrl, article);            
             return response;
         }
+
+        public static string VoteArticle(int articleId, string author, bool voteValue, string sessionKey)
+        {
+            string voteUrl = "votes/create?sessionKey=" + sessionKey;
+            VoteModel vote = new VoteModel
+            {
+                ArticleId = articleId,
+                Author = author,
+                Value = voteValue
+            };
+            var response = requester.Post<string>(voteUrl, vote);
+            return response;
+        }
     }
 }
