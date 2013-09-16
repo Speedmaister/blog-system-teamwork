@@ -18,6 +18,8 @@ namespace BlogSystemClient.ViewModels
         public string Content { get; set; }
         private byte[] imageToBytes;
 
+        public event EventHandler CreateArticleSuccess;
+        
         private ICommand createCommand;
         private ICommand getImageCommand;
 
@@ -56,16 +58,22 @@ namespace BlogSystemClient.ViewModels
 
         private void HandleCreateArticleCommand(object obj)
         {
-            var author = "radoslav92";
-                //LoginRegisterViewModel.Username;
-            var authCode = "41B90fY4fG691aWi7cbsPNbzHOxeOG89p7h2LPaq";
-                //LoginRegisterViewModel.SessionKey;
+            var author = LoginRegisterViewModel.Username;
+            var authCode = LoginRegisterViewModel.SessionKey;
             var title = this.Title;
             var content = this.Content;
-            
+            var articleCreateModel= DataPersister.CreateArticle(author, title, content, imageToBytes, authCode);
 
-            DataPersister.CreateArticle(author, title, content, imageToBytes, authCode);
+            if (articleCreateModel.Content != null)
+            {
+                if (this.CreateArticleSuccess != null)
+                {
+                    this.CreateArticleSuccess(this, null);
+                }
+            }
+            //this.Click = new RelayCommand(this.HandleClick);
         }
+
 
         private void HandleGetImageCommand(object obj)
         {

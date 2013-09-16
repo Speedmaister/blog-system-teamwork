@@ -6,84 +6,28 @@ D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemCli
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\bin\Debug\EntityFramework.xml
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\bin\Debug\Newtonsoft.Json.xml
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csprojResolveAssemblyReference.cache
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.baml
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateSubcommentView.baml
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\EditArticleView.baml
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\LoginRegisterView.baml
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.baml
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\MainWindow.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\ArticlesView.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateSubcommentView.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\EditArticleView.g.cs
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\LoginRegisterView.g.cs
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.g.cs
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\App.g.cs
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient_MarkupCompile.cache
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient_MarkupCompile.lref
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\MainWindow.baml
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\ArticlesView.baml
+D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.baml
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.g.resources
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.Properties.Resources.resources
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csproj.GenerateResource.Cache
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.exe
 D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.pdb
-D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.baml
-D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.g.cs
-D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.g.cs
-D:\Telerik\9. Xaml\Lectures\13. Teamwork\TeamWork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\BlogSystemClient.exe.config
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.exe
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.pdb
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csprojResolveAssemblyReference.cache
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateSubcommentView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\LoginRegisterView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\MainWindow.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\ArticlesView.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateSubcommentView.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\LoginRegisterView.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\App.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient_MarkupCompile.cache
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient_MarkupCompile.lref
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\BlogSystemClient.exe
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\BlogSystemClient.pdb
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\EntityFramework.dll
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\Newtonsoft.Json.dll
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\EntityFramework.xml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\Newtonsoft.Json.xml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\MainWindow.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\ArticlesView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.g.resources
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.Properties.Resources.resources
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csproj.GenerateResource.Cache
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\BlogSystemClient.exe.config
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.exe
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.pdb
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\BlogSystemClient.exe
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\BlogSystemClient.pdb
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\EntityFramework.dll
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\Newtonsoft.Json.dll
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\EntityFramework.xml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\bin\Debug\Newtonsoft.Json.xml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csprojResolveAssemblyReference.cache
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.baml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateSubcommentView.baml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\LoginRegisterView.baml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\MainWindow.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\ArticlesView.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateArticleView.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateSubcommentView.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\LoginRegisterView.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\App.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\GeneratedInternalTypeHelper.g.cs
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient_MarkupCompile.cache
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient_MarkupCompile.lref
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\MainWindow.baml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\ArticlesView.baml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\CreateCommentView.baml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.g.resources
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.Properties.Resources.resources
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csproj.GenerateResource.Cache
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.baml
-E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.g.cs
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\EditArticleView.baml
-D:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\EditArticleView.g.cs
