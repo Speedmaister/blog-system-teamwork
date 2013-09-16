@@ -100,6 +100,7 @@ namespace BlogSystemClient.ViewModels
             {
                 this.ArticlesViewModel = new ArticlesViewModel();
                 this.ArticlesViewModel.openSingleArticle += this.NavigateToSingleArticle;
+                this.ArticlesViewModel.OpenCreateArticle += this.NavigateToCreateArticle;
             }
             if (this.SingleArticleViewModel == null)
             {
