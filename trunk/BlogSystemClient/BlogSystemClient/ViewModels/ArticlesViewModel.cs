@@ -46,17 +46,23 @@ namespace BlogSystemClient.ViewModels
         public ArticlesViewModel()
         {
             this.Articles = new ObservableCollection<Article>();
+            string[] filePaths = Directory.GetFiles(@"..\..\Images\");
+            for (int i = 0; i < filePaths.Count(); i++)
+            {
+                File.Delete(filePaths[i]);
+            }
+        }
+
+        public void UpdateArticles() 
+        {
+            this.Articles.Clear();
             var articles = DataPersister.GetAll();
             foreach (var article in articles)
             {
                 this.Articles.Add(article);
             }
             this.Click = new RelayCommand(this.HandleClick);
-            string[] filePaths = Directory.GetFiles(@"..\..\Images\");
-            for (int i = 0; i < filePaths.Count(); i++)
-            {
-                File.Delete(filePaths[i]);
-            }
+           
         }
 
         private void HandleClick(object obj)
