@@ -64,7 +64,7 @@ namespace BlogSystemClient.ViewModels
 
         public void NavigateToEditArticle(object sender, SingleArticleEventArgs e)
         {
-            //TODO Change view to edit article
+            
             this.CurrentViewModel = this.EditArticleViewModel;
             this.EditArticleViewModel.SetChoosenArticle(e.choosenArticle);
         }
