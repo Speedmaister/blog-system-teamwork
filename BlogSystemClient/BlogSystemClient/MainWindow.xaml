@@ -20,6 +20,10 @@
             <Views:CreateCommentView />
         </DataTemplate>
         <DataTemplate            
+            DataType="{x:Type ViewModels:SingleArticleViewModel}">
+            <Views:SingleArticleView />
+        </DataTemplate>
+        <DataTemplate            
             DataType="{x:Type ViewModels:CreateSubcommentViewModel}">
             <Views:CreateSubcommentView />
         </DataTemplate>

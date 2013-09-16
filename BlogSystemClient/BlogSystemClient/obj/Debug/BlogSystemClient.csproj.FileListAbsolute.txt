@@ -81,3 +81,5 @@ E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\Create
 E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.g.resources
 E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.Properties.Resources.resources
 E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\BlogSystemClient.csproj.GenerateResource.Cache
+E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.baml
+E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\obj\Debug\Views\SingleArticleView.g.cs

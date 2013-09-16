@@ -1,5 +1,6 @@
 ﻿using BlogSystemClient.Commands;
 using BlogSystemClient.Data;
+using BlogSystemClient.Helpers;
 using BlogSystemClient.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace BlogSystemClient.ViewModels
     public class ArticlesViewModel : ViewModelBase, IPageViewModel
     {
         private string title;
+        public event EventHandler<SingleArticleEventArgs> homePageSuccess;
         public string Name
         {
             get
@@ -50,12 +52,16 @@ namespace BlogSystemClient.ViewModels
             this.Click = new RelayCommand(this.HandleClick);
         }
 
-        public Article CurrentArticle { get; set; }
-
         private void HandleClick(object obj)
         {
-            var a = obj as Article;
-            
+            var choosenArticle = obj as Article;
+            if (homePageSuccess != null)
+            {
+                homePageSuccess(this, new SingleArticleEventArgs
+                {
+                    choosenArticle = choosenArticle
+                });
+            }
         }
     }
 }
