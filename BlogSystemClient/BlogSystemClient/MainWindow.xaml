@@ -38,5 +38,6 @@
     </Window.Resources>
     <StackPanel>
         <ContentControl Content="{Binding CurrentViewModel}" />
+        <Button Content="Logout" Visibility="Hidden" Command=""/>
     </StackPanel>
 </Window>
