@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace BlogSystemClient.ViewModels
@@ -19,7 +20,7 @@ namespace BlogSystemClient.ViewModels
         private byte[] imageToBytes;
 
         public event EventHandler CreateArticleSuccess;
-        
+
         private ICommand createCommand;
         private ICommand getImageCommand;
 
@@ -62,16 +63,19 @@ namespace BlogSystemClient.ViewModels
             var authCode = LoginRegisterViewModel.SessionKey;
             var title = this.Title;
             var content = this.Content;
-            var articleCreateModel= DataPersister.CreateArticle(author, title, content, imageToBytes, authCode);
 
-            if (articleCreateModel.Content != null)
+            try
             {
+                DataPersister.CreateArticle(author, title, content, imageToBytes, authCode);
                 if (this.CreateArticleSuccess != null)
                 {
                     this.CreateArticleSuccess(this, null);
                 }
             }
-            //this.Click = new RelayCommand(this.HandleClick);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
