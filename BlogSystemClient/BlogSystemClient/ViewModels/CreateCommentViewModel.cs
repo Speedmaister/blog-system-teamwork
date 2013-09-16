@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -42,7 +43,14 @@ namespace BlogSystemClient.ViewModels
             var sessionKey = LoginRegisterViewModel.SessionKey;
             var article = this.ArticleId;
 
-            this.Id = DataPersister.CreateComment(article, author, content, sessionKey);
+            try
+            {
+                this.Id = DataPersister.CreateComment(article, author, content, sessionKey);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public string Name

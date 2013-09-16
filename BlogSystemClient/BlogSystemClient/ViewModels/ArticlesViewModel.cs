@@ -15,7 +15,7 @@ namespace BlogSystemClient.ViewModels
     public class ArticlesViewModel : ViewModelBase, IPageViewModel
     {
         private string title;
-        public event EventHandler<SingleArticleEventArgs> homePageSuccess;
+        public event EventHandler<SingleArticleEventArgs> openSingleArticle;
         public event EventHandler OpenCreateArticle;
         public string Name
         {
@@ -56,9 +56,9 @@ namespace BlogSystemClient.ViewModels
         private void HandleClick(object obj)
         {
             var choosenArticle = obj as Article;
-            if (homePageSuccess != null)
+            if (openSingleArticle != null)
             {
-                homePageSuccess(this, new SingleArticleEventArgs
+                openSingleArticle(this, new SingleArticleEventArgs
                 {
                     choosenArticle = choosenArticle
                 });

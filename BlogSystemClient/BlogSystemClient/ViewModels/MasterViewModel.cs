@@ -88,7 +88,7 @@ namespace BlogSystemClient.ViewModels
 
             this.CreateCommentViewModel = new CreateCommentViewModel();
             this.ArticlesViewModel = new ArticlesViewModel();
-            this.ArticlesViewModel.homePageSuccess += this.NavigateToSingleArticle;
+            this.ArticlesViewModel.openSingleArticle += this.NavigateToSingleArticle;
             this.ArticlesViewModel.OpenCreateArticle += this.NavigateToCreateArticle;
             this.SingleArticleViewModel = new SingleArticleViewModel();
             this.SingleArticleViewModel.OpenEditArticle += this.NavigateToEditArticle;
