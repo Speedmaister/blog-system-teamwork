@@ -89,7 +89,7 @@ namespace BlogSystemClient.Data
             return response;
         }
 
-        public static void EditArticle(string author, string title, string content, byte[] image, string sessionKey, int id)
+        public static string EditArticle(string author, string title, string content, byte[] image, string sessionKey, int id)
         {
             string loginUrl = "articles/Update?sessionKey=" + sessionKey;
             ArticleModel article = new ArticleModel
@@ -101,6 +101,7 @@ namespace BlogSystemClient.Data
                 ArticleImage = image
             };
             var response = requester.Post<string>(loginUrl, article);
+            return response;
         }
 
     }

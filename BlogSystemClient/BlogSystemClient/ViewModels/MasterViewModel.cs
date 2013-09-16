@@ -90,6 +90,7 @@ namespace BlogSystemClient.ViewModels
             this.SingleArticleViewModel = new SingleArticleViewModel();
             this.SingleArticleViewModel.OpenEditArticle += this.NavigateToEditArticle;
             this.EditArticleViewModel = new EditArticleViewModel();
+            this.EditArticleViewModel.EditArticleSuccess += this.NavigateToSingleArticle;
             this.CreateSubcommentViewModel = new CreateSubcommentViewModel();
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }
