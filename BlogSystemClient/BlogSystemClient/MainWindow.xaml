@@ -42,7 +42,7 @@
         </DataTemplate>
         <converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
     </Window.Resources>
-    <StackPanel>
+    <StackPanel Width="500">
         <ContentControl Content="{Binding CurrentViewModel}" />
         <Button Content="Logout" Visibility="{Binding IsLogoutVisible,Converter={StaticResource boolToVisibilityConverter}}" Command="{Binding Logout}"/>
     </StackPanel>
