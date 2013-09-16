@@ -75,6 +75,7 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\SessionKeyModel.cs" />
     <Compile Include="Models\SubcommentModel.cs" />

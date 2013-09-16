@@ -31,7 +31,7 @@ namespace BlogSystemClient.ViewModels
 
         public EditArticleViewModel(Article article = null)
         {
-            
+
         }
 
         public void SetChoosenArticle(Article article)
@@ -72,19 +72,15 @@ namespace BlogSystemClient.ViewModels
 
         private void HandleEditArticleCommand(object obj)
         {
-            var author =LoginRegisterViewModel.Username; 
-            var authCode =LoginRegisterViewModel.SessionKey;
+            var author = LoginRegisterViewModel.Username;
+            var authCode = LoginRegisterViewModel.SessionKey;
             var title = this.Article.Title;
             var content = this.Article.Content;
             var imageToBytes = this.Article.Images[0].Image;
 
-            var response = DataPersister.EditArticle(author, title, content, imageToBytes, authCode, this.Article.Id);
-            if (!String.IsNullOrEmpty(response))
+            try
             {
-                MessageBox.Show(response);
-            }
-            else
-            {
+                var response = DataPersister.EditArticle(author, title, content, imageToBytes, authCode, this.Article.Id);
                 if (this.EditArticleSuccess != null)
                 {
                     this.EditArticleSuccess(this, new SingleArticleEventArgs
@@ -92,6 +88,10 @@ namespace BlogSystemClient.ViewModels
                         choosenArticle = this.Article
                     });
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

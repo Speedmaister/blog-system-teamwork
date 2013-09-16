@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -57,15 +58,22 @@ namespace BlogSystemClient.ViewModels
             var passwordBox = parameter as PasswordBox;
             string password = passwordBox.Password;
             string authCode = this.PasswordToSha1(password, Encoding.UTF8);
-            var sessionKeyModel = DataPersister.LoginUser(Username, authCode);
-            if (sessionKeyModel.SessionKey != null)
+            try
             {
-                if (this.LoginRegisterSuccess != null)
+                var sessionKeyModel = DataPersister.LoginUser(Username, authCode);
+                if (sessionKeyModel.SessionKey != null)
                 {
-                    SessionKey = sessionKeyModel.SessionKey;
-                    Username = sessionKeyModel.Username;
-                    this.LoginRegisterSuccess(this, null);
+                    if (this.LoginRegisterSuccess != null)
+                    {
+                        SessionKey = sessionKeyModel.SessionKey;
+                        Username = sessionKeyModel.Username;
+                        this.LoginRegisterSuccess(this, null);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -73,16 +81,22 @@ namespace BlogSystemClient.ViewModels
         {
             var passwordBox = parameter as PasswordBox;
             string password = passwordBox.Password;
-            string authCode = this.PasswordToSha1(password, Encoding.UTF8);
-            var sessionKeyModel = DataPersister.RegisterUser(Username, authCode);
-            if (sessionKeyModel.SessionKey != null)
+            string authCode = this.PasswordToSha1(password, Encoding.UTF8); try
             {
-                if (this.LoginRegisterSuccess != null)
+                var sessionKeyModel = DataPersister.RegisterUser(Username, authCode);
+                if (sessionKeyModel.SessionKey != null)
                 {
-                    SessionKey = sessionKeyModel.SessionKey;
-                    Username = sessionKeyModel.Username;
-                    this.LoginRegisterSuccess(this, null);
+                    if (this.LoginRegisterSuccess != null)
+                    {
+                        SessionKey = sessionKeyModel.SessionKey;
+                        Username = sessionKeyModel.Username;
+                        this.LoginRegisterSuccess(this, null);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

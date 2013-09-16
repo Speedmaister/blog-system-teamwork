@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using BlogSystemClient.Models;
 
 namespace BlogSystemClient.Data
 {
@@ -46,7 +47,16 @@ namespace BlogSystemClient.Data
             request.Content.Headers.ContentType = new MediaTypeHeaderValue(mediaType);
 
             var response = client.SendAsync(request).Result;
-            return JsonConvert.DeserializeObject<T>(response.Content.ReadAsStringAsync().Result);
+            var content = response.Content.ReadAsStringAsync().Result;
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(content);
+            }
+            catch (JsonReaderException ex)
+            {
+                var errorResponse = JsonConvert.DeserializeObject<ErrorMessageModel>(content);
+                throw new Exception(errorResponse.Message);
+            }
         }
 
         public Task<T> CreateGetRequestAsync<T>(string serviceUrl, string mediaType = "application/json")
