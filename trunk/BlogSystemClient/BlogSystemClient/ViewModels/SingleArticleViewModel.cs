@@ -34,6 +34,8 @@ namespace BlogSystemClient.ViewModels
         {
             this.Article = article;
             this.SaveImageToComputer();
+            this.Article.VotesUp = article.For;
+            this.Article.VotesDown = article.Against;
         }
 
         private void SaveImageToComputer()
@@ -185,7 +187,8 @@ namespace BlogSystemClient.ViewModels
             try
             {
                 var response = DataPersister.VoteArticle(articleId, author, true, sessionKey);
-                //this.Id = DataPersister.CreateComment(article, author, content, sessionKey);
+                this.Article.VotesUp++;
+                this.OnPropertyChanged("For");
             }
             catch (Exception ex)
             {
@@ -202,7 +205,8 @@ namespace BlogSystemClient.ViewModels
             try
             {
                 var response = DataPersister.VoteArticle(articleId, author, false, sessionKey);
-                //this.Id = DataPersister.CreateComment(article, author, content, sessionKey);
+                this.Article.VotesDown++;
+                this.OnPropertyChanged("Against");
             }
             catch (Exception ex)
             {

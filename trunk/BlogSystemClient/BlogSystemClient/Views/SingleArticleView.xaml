@@ -4,13 +4,63 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="320">
     <StackPanel>
-        <TextBlock Text="{Binding Article.Title}" />
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Written by:</TextBlock>
-            <TextBlock Text="{Binding Article.Author}"/>
-        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button  
+                Width="80"
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Command="{Binding BackToArticles}">Back</Button>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="0"
+                       FontSize="14"
+                       FontWeight="Bold"
+                       Text="{Binding Article.Title}" />
+            <StackPanel Grid.Row="2"
+                        Grid.Column="0"
+                        Orientation="Horizontal">
+                <TextBlock FontStyle="Italic">Written by:</TextBlock>
+                <TextBlock FontWeight="Bold"
+                           FontStyle="Italic"
+                           Text="{Binding Article.Author}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center"
+                           Margin="0 0 20 0" 
+                           Width="45">For: </TextBlock>
+                <TextBlock FontWeight="Bold"
+                           FontStyle="Italic"
+                           VerticalAlignment="Center"
+                           Margin="0 0 10 0"
+                           Text="{Binding Article.VotesUp}"/>
+                <Button Width="85" Command="{Binding VotePositiveCommand}">Vote Positive</Button>
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                <TextBlock Width="45"
+                           VerticalAlignment="Center"
+                           Margin="0 0 20 0">Against: </TextBlock>
+                <TextBlock FontWeight="Bold"
+                           FontStyle="Italic"
+                           VerticalAlignment="Center"
+                           Margin="0 0 10 0"
+                           Text="{Binding Article.VotesDown}"/>
+                <Button Width="85" Command="{Binding VoteNegativeCommand}">Vote Negative</Button>
+            </StackPanel>
+        </Grid>
         <Image Width="100" Height="100" Source="{Binding Article.ImageSource}"/>
         <TextBlock Text="{Binding Article.Content}"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
@@ -43,10 +93,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
-        <Button  Command="{Binding VotePositiveCommand}">Vote Positive</Button>
-        <Button  Command="{Binding VoteNegativeCommand}">Vote Negative</Button>
         <Button Command="{Binding AddComment}">Add Comment</Button>
         <Button  Command="{Binding EditArticle}">Edit</Button>
-        <Button  Command="{Binding BackToArticles}">Back</Button>
     </StackPanel>
 </UserControl>
