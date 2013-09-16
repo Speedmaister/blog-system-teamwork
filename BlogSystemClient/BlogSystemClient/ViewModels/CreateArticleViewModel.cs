@@ -66,6 +66,22 @@ namespace BlogSystemClient.ViewModels
 
             try
             {
+
+                if (string.IsNullOrWhiteSpace(title))
+                {
+                    throw new Exception("You have not written a title to the blog post!");
+                }
+
+                if (string.IsNullOrWhiteSpace(content))
+                {
+                    throw new Exception("You have not written any content!");
+                }
+
+                if (imageToBytes == null)
+                {
+                    throw new Exception("You have not selected any image to be posted in the blog article!");
+                }
+
                 DataPersister.CreateArticle(author, title, content, imageToBytes, authCode);
                 if (this.CreateArticleSuccess != null)
                 {
