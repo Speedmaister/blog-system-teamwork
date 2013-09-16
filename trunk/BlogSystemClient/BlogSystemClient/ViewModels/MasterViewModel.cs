@@ -57,8 +57,7 @@ namespace BlogSystemClient.ViewModels
 
         public void NavigateToCreateArticle(object sender, EventArgs e)
         {
-            //TODO Change view to create article
-            this.CurrentViewModel = this.LoginRegisterViewModel;
+            this.CurrentViewModel = this.CreateArticleViewModel;
         }
 
         public void NavigateToEditArticle(object sender, SingleArticleEventArgs e)
@@ -83,10 +82,14 @@ namespace BlogSystemClient.ViewModels
         {
             this.LoginRegisterViewModel = new LoginRegisterViewModel();
             this.LoginRegisterViewModel.LoginRegisterSuccess += this.NavigateToHome;
+
             this.CreateArticleViewModel = new CreateArticleViewModel();
+            this.CreateArticleViewModel.CreateArticleSuccess += this.NavigateToHome;
+
             this.CreateCommentViewModel = new CreateCommentViewModel();
             this.ArticlesViewModel = new ArticlesViewModel();
             this.ArticlesViewModel.homePageSuccess += this.NavigateToSingleArticle;
+            this.ArticlesViewModel.OpenCreateArticle += this.NavigateToCreateArticle;
             this.SingleArticleViewModel = new SingleArticleViewModel();
             this.SingleArticleViewModel.OpenEditArticle += this.NavigateToEditArticle;
             this.EditArticleViewModel = new EditArticleViewModel();

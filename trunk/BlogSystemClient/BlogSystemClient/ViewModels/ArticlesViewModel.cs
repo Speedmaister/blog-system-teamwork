@@ -16,6 +16,7 @@ namespace BlogSystemClient.ViewModels
     {
         private string title;
         public event EventHandler<SingleArticleEventArgs> homePageSuccess;
+        public event EventHandler OpenCreateArticle;
         public string Name
         {
             get
@@ -62,6 +63,26 @@ namespace BlogSystemClient.ViewModels
                     choosenArticle = choosenArticle
                 });
             }
+        }
+
+        public ICommand clickOpenCreateArticle;
+
+        public ICommand ClickOpenCreateArticle
+        {
+            get
+            {
+                if (this.clickOpenCreateArticle == null)
+                {
+                    this.clickOpenCreateArticle = new RelayCommand(this.HandleOpenCreateArticle);
+                }
+
+                return this.clickOpenCreateArticle;
+            }
+        }
+
+        private void HandleOpenCreateArticle(object param)
+        {
+            this.OpenCreateArticle(this, null);
         }
     }
 }

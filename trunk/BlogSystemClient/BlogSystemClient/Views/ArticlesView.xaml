@@ -34,5 +34,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Button Command="{Binding ClickOpenCreateArticle, Path=DataContext.ArticlesViewModel.ClickOpenCreateArticle,
+                            RelativeSource={RelativeSource AncestorType={x:Type Window}}}">Create New Article</Button>
     </StackPanel>
 </UserControl>
