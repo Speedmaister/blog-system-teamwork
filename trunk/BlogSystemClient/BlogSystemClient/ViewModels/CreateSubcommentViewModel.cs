@@ -60,11 +60,16 @@ namespace BlogSystemClient.ViewModels
                 {
                     this.BackToArticle(this, null);
                 }
-                this.Comment.SubComments.Add(new SubcommentModel()
+                if (this.Comment.SubComments == null)
                 {
-                    Content=content,
-                    Author=author
-                });
+                    this.Comment.SubComments = new List<SubcommentModel>();
+                }
+                    this.Comment.SubComments.Add(new SubcommentModel()
+                    {
+                        Content = content,
+                        Author = author
+                    });
+                
             }
             catch (Exception ex)
             {

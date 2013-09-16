@@ -66,6 +66,7 @@ namespace BlogSystemClient.ViewModels
             this.Article.Comments.Add(new CommentModel()
             {
                 ArticleId = this.Article.Id,
+                Id=this.Id,
                 Author = author,
                 Content = content
             });
