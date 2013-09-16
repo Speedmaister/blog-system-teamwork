@@ -71,6 +71,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Data\DataPersister.cs" />
     <Compile Include="Data\HttpRequester.cs" />
+    <Compile Include="Helpers\BoolToVisibilityConverter.cs" />
     <Compile Include="Helpers\SingleArticleEventArgs.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleModel.cs" />

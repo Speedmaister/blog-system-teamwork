@@ -28,8 +28,12 @@ namespace BlogSystemClient.ViewModels
             }
         }
 
+        public bool IsLogoutVisible{get;set;}
+
         private void HandleLogoutCommand(object obj)
         {
+            this.IsLogoutVisible = false;
+            OnPropertyChanged("IsLogoutVisible");
             this.NavigateToLoginRegister(this, null);
         }
 
@@ -63,6 +67,9 @@ namespace BlogSystemClient.ViewModels
         public void NavigateToHome(object sender, EventArgs e)
         {
             this.CurrentViewModel = this.ArticlesViewModel;
+            this.IsLogoutVisible = true;
+            OnPropertyChanged("IsLogoutVisible");
+        }
             this.ArticlesViewModel.UpdateArticles();
             
         }
@@ -109,6 +116,7 @@ namespace BlogSystemClient.ViewModels
 
         public MasterViewModel()
         {
+            this.IsLogoutVisible = false;
             this.LoginRegisterViewModel = new LoginRegisterViewModel();
             this.LoginRegisterViewModel.LoginRegisterSuccess += this.NavigateToHome;
 

@@ -12,9 +12,9 @@ DEBUG;TRACE
 E:\blog-system-teamwork\BlogSystemClient\BlogSystemClient\App.xaml
 81208573169
 
-40-1746264214
+41-2058913808
 18-1971397459
 MainWindow.xaml;Views\ArticlesView.xaml;Views\CreateArticleView.xaml;Views\CreateCommentView.xaml;Views\CreateSubcommentView.xaml;Views\EditArticleView.xaml;Views\LoginRegisterView.xaml;Views\SingleArticleView.xaml;
 
-False
+True
 
