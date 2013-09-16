@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace BlogSystemClient.ViewModels
@@ -20,6 +21,8 @@ namespace BlogSystemClient.ViewModels
 
         private ICommand editCommant;
         private ICommand getImageCommand;
+
+        public event EventHandler<SingleArticleEventArgs> EditArticleSuccess;
 
         public string Name
         {
@@ -75,7 +78,21 @@ namespace BlogSystemClient.ViewModels
             var content = this.Article.Content;
             var imageToBytes = this.Article.Images[0].Image;
 
-            DataPersister.EditArticle(author, title, content, imageToBytes, authCode, this.Article.Id);
+            var response = DataPersister.EditArticle(author, title, content, imageToBytes, authCode, this.Article.Id);
+            if (!String.IsNullOrEmpty(response))
+            {
+                MessageBox.Show(response);
+            }
+            else
+            {
+                if (this.EditArticleSuccess != null)
+                {
+                    this.EditArticleSuccess(this, new SingleArticleEventArgs
+                    {
+                        choosenArticle = this.Article
+                    });
+                }
+            }
         }
 
         private void HandleGetImageCommand(object obj)
