@@ -88,5 +88,20 @@ namespace BlogSystemClient.Data
             var response = requester.Post<int>(subcommentUrl, subcomment);
             return response;
         }
+
+        public static void EditArticle(string author, string title, string content, byte[] image, string sessionKey, int id)
+        {
+            string loginUrl = "articles/Update?sessionKey=" + sessionKey;
+            ArticleModel article = new ArticleModel
+            {
+                Id=id,
+                Author = author,
+                Title = title,
+                Content = content,
+                ArticleImage = image
+            };
+            var response = requester.Post<string>(loginUrl, article);
+        }
+
     }
 }

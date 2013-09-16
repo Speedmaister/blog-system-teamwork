@@ -1,4 +1,6 @@
-﻿using BlogSystemClient.Data;
+﻿using BlogSystemClient.Commands;
+using BlogSystemClient.Data;
+using BlogSystemClient.Helpers;
 using BlogSystemClient.Models;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace BlogSystemClient.ViewModels
 {
@@ -21,7 +24,12 @@ namespace BlogSystemClient.ViewModels
             set;
         }
 
-        public SingleArticleViewModel(Article article)
+        public SingleArticleViewModel()
+        {
+
+        }
+
+        public void SetArticle(Article article)
         {
             this.Article = article;
             this.SaveImageToComputer();
@@ -35,6 +43,31 @@ namespace BlogSystemClient.ViewModels
             var image = Image.FromStream(stream);
             image.Save(savePath, System.Drawing.Imaging.ImageFormat.Jpeg);
             this.Article.ImageSource = url;
+        }
+
+        public event EventHandler<SingleArticleEventArgs> OpenEditArticle;
+
+        private ICommand editCommand;
+
+        public ICommand EditArticle
+        {
+            get
+            {
+                if (this.editCommand == null)
+                {
+                    this.editCommand = new RelayCommand(this.HandleEditCommand);
+                }
+
+                return this.editCommand;
+            }
+        }
+
+        private void HandleEditCommand(object parameter)
+        {
+            this.OpenEditArticle(this, new SingleArticleEventArgs()
+            {
+                choosenArticle = this.Article
+            });
         }
 
         public string Name
