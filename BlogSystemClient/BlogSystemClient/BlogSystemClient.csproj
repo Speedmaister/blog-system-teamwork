@@ -100,6 +100,9 @@
     <Compile Include="Views\CreateSubcommentView.xaml.cs">
       <DependentUpon>CreateSubcommentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditArticleView.xaml.cs">
+      <DependentUpon>EditArticleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginRegisterView.xaml.cs">
       <DependentUpon>LoginRegisterView.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
     <Page Include="Views\CreateSubcommentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditArticleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginRegisterView.xaml">
       <SubType>Designer</SubType>

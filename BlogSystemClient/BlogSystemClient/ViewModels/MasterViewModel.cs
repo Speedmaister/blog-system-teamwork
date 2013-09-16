@@ -22,6 +22,10 @@ namespace BlogSystemClient.ViewModels
 
         public CreateSubcommentViewModel CreateSubcommentViewModel { get; set; }
 
+        public EditArticleViewModel EditArticleViewModel { get; set; }
+
+        public SingleArticleViewModel SingleArticleViewModel { get; set; }
+
         public IPageViewModel CurrentViewModel
         {
             get
@@ -47,7 +51,8 @@ namespace BlogSystemClient.ViewModels
 
         public void NavigateToSingleArticle(object sender, SingleArticleEventArgs e)
         {
-            this.CurrentViewModel = new SingleArticleViewModel(e.choosenArticle);
+            this.CurrentViewModel = this.SingleArticleViewModel;
+            this.SingleArticleViewModel.SetArticle(e.choosenArticle);
         }
 
         public void NavigateToCreateArticle(object sender, EventArgs e)
@@ -56,10 +61,11 @@ namespace BlogSystemClient.ViewModels
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }
 
-        public void NavigateToEditArticle(object sender, EventArgs e)
+        public void NavigateToEditArticle(object sender, SingleArticleEventArgs e)
         {
             //TODO Change view to edit article
-            this.CurrentViewModel = this.CreateCommentViewModel;
+            this.CurrentViewModel = this.EditArticleViewModel;
+            this.EditArticleViewModel.SetChoosenArticle(e.choosenArticle);
         }
 
         public void NavigateToCreateSubcomment(object sender, EventArgs e)
@@ -72,6 +78,7 @@ namespace BlogSystemClient.ViewModels
             this.CurrentViewModel = this.CreateCommentViewModel;
         }
 
+
         public MasterViewModel()
         {
             this.LoginRegisterViewModel = new LoginRegisterViewModel();
@@ -80,6 +87,9 @@ namespace BlogSystemClient.ViewModels
             this.CreateCommentViewModel = new CreateCommentViewModel();
             this.ArticlesViewModel = new ArticlesViewModel();
             this.ArticlesViewModel.homePageSuccess += this.NavigateToSingleArticle;
+            this.SingleArticleViewModel = new SingleArticleViewModel();
+            this.SingleArticleViewModel.OpenEditArticle += this.NavigateToEditArticle;
+            this.EditArticleViewModel = new EditArticleViewModel();
             this.CreateSubcommentViewModel = new CreateSubcommentViewModel();
             this.CurrentViewModel = this.LoginRegisterViewModel;
         }

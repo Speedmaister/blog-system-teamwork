@@ -31,6 +31,10 @@
             DataType="{x:Type ViewModels:ArticlesViewModel}">
             <Views:ArticlesView/>
         </DataTemplate>
+        <DataTemplate
+            DataType="{x:Type ViewModels:EditArticleViewModel}">
+            <Views:EditArticleView/>
+        </DataTemplate>
     </Window.Resources>
     <StackPanel>
         <ContentControl Content="{Binding CurrentViewModel}" />
