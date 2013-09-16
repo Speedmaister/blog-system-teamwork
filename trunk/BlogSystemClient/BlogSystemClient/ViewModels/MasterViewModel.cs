@@ -69,7 +69,6 @@ namespace BlogSystemClient.ViewModels
             this.CurrentViewModel = this.ArticlesViewModel;
             this.IsLogoutVisible = true;
             OnPropertyChanged("IsLogoutVisible");
-        }
             this.ArticlesViewModel.UpdateArticles();
             
         }
