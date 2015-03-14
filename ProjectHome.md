@@ -1,0 +1,1 @@
+Simple desktop client for blog system
